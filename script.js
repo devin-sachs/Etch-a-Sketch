@@ -16,12 +16,13 @@ function createDivs(){
 
         //querySelector('grid-container')
 
-        for (i = 0; i < 16; i++) {
-            for (j = 0; j < 16; j++) {
+        for (rowCount = 0; rowCount < 16; rowCount++) {
+            for (colCount = 0; colCount < 16; colCount++) {
             const divContainer = document.querySelector('.grid-container');
-              const row = document.createElement("div");
-              divContainer.appendChild(row);
-              row.textContent = `a`
+              const gridPoint = document.createElement("div");
+              gridPoint.setAttribute('class','grid-point')
+              divContainer.appendChild(gridPoint);
+              gridPoint.textContent = ` `
           //  }
           }
     }
