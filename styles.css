@@ -10,7 +10,8 @@
     align-items: center;
     flex-direction: row;
     flex-wrap:wrap;
-    margin: 30px;
+    margin: auto;
+    /* width: 50vw; */
   
 }
 
@@ -18,14 +19,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px;
-    border-style: solid;
+    /* width: 75vw */
+    width: 595px;
+    /* height: 600px; */
 } 
 
 .grid-point{
-    border: 1px;
-    border-style: solid;
-    min-width: 5px;
-    min-height: 30px;
-    width: calc(6.25% - 2px);
+    outline: 1px solid;
+    margin-bottom: 1px;
+    margin-right: 1px; 
+    width: 35px;
+    height: 35px;
+    aspect-ratio: 1 / 1;
+
 }
