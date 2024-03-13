@@ -11,8 +11,6 @@
     flex-direction: row;
     flex-wrap:wrap;
     margin: auto;
-    /* width: 50vw; */
-  
 }
 
 .grid-container{ 
@@ -32,4 +30,8 @@
     height: 35px;
     aspect-ratio: 1 / 1;
 
+}
+
+.mouse-on{
+    background-color: red;
 }
