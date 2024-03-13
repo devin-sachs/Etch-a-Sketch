@@ -46,7 +46,10 @@ function gridHighlight(){
                 etchElements[gridCount].classList.add('mouse-on');
             })
     }
-    }    
+    }
+    
+function newGrid(){
+}
 
 createDivs();
 gridHighlight();
