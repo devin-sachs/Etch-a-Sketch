@@ -1,7 +1,3 @@
-
-
-//Create 16x16 pattern of divs
-
 function createDivs(squareCount){ 
         for (rowCount = 0; rowCount < squareCount; rowCount++) {
             for (colCount = 0; colCount < squareCount; colCount++) {
@@ -9,26 +5,8 @@ function createDivs(squareCount){
               const gridPoint = document.createElement("div");
               gridPoint.setAttribute('class','grid-point')
               let gridPercent = 100/squareCount; 
-              console.log('grid percent ' + gridPercent);
-
-
-              //gridPoint.style.width = `calc(${gridPercent} - 2px)`;
-
               gridPoint.style.width = `calc(${gridPercent}% - 2px)`
-
-              //let gridCSS = document.querySelector('.grid-point');
-              //console.log(gridCSS);
-            //document.querySelector('.grid-point').style.width = `calc(${gridPercent} - 2px)`;
-            //if (gridCSS !== null) {
-              //  console.log(gridCSS);
-                //gridCSS.setAttribute('width', `35px`);
-                //gridCSS.style.width = `calc(${gridPercent} - 2px)`;
-                
-
-            //}
-
               divContainer.appendChild(gridPoint);
-              //gridPoint.textContent = ` `
            }
           }
     }
@@ -67,7 +45,6 @@ function gridHighlight(){
     }
     }
 
-
 function removeGrid() {
     let removeSquare = document.getElementsByClassName('grid-point');
 
@@ -82,6 +59,10 @@ function newGrid(){
     const customGrid = document.getElementById('custom-grid');
     customGrid.addEventListener('click', (event) => {
         let squareCount = Number(window.prompt(`Enter the Number of squares per side you'd like`, ""))
+        if (squareCount > 100) { 
+            alert('Please enter a number 100 or below'); 
+            return;
+        }
         removeGrid()
         createDivs(squareCount);
         gridHighlight();
@@ -98,13 +79,7 @@ function newGrid(){
 
 }
 
-// //width: calc(25% - 2px); need to have 100/(number of squares) - 2px for width inside original createDivs function
-// height: calc(25% auto);
-// aspect-ratio: 1 / 1;
 
-
-
-
-createDivs(10);
+createDivs(16);
 gridHighlight();
 newGrid();
