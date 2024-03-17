@@ -8,8 +8,27 @@ function createDivs(squareCount){
             const divContainer = document.querySelector('.grid-container');
               const gridPoint = document.createElement("div");
               gridPoint.setAttribute('class','grid-point')
+              let gridPercent = 100/squareCount; 
+              console.log('grid percent ' + gridPercent);
+
+
+              //gridPoint.style.width = `calc(${gridPercent} - 2px)`;
+
+              gridPoint.style.width = `calc(${gridPercent}% - 2px)`
+
+              //let gridCSS = document.querySelector('.grid-point');
+              //console.log(gridCSS);
+            //document.querySelector('.grid-point').style.width = `calc(${gridPercent} - 2px)`;
+            //if (gridCSS !== null) {
+              //  console.log(gridCSS);
+                //gridCSS.setAttribute('width', `35px`);
+                //gridCSS.style.width = `calc(${gridPercent} - 2px)`;
+                
+
+            //}
+
               divContainer.appendChild(gridPoint);
-              gridPoint.textContent = ` `
+              //gridPoint.textContent = ` `
            }
           }
     }
@@ -65,6 +84,7 @@ function newGrid(){
         let squareCount = Number(window.prompt(`Enter the Number of squares per side you'd like`, ""))
         removeGrid()
         createDivs(squareCount);
+        gridHighlight();
 
         // need to adjust CSS to accomodate new grid and confirm removing the grid works
     //Need to do some math to adjust square size to fit pixels of container and set max input possible to 100 or less 
@@ -78,9 +98,13 @@ function newGrid(){
 
 }
 
+// //width: calc(25% - 2px); need to have 100/(number of squares) - 2px for width inside original createDivs function
+// height: calc(25% auto);
+// aspect-ratio: 1 / 1;
 
 
 
-createDivs(16);
+
+createDivs(10);
 gridHighlight();
 newGrid();
